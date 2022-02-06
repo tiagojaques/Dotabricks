@@ -73,13 +73,3 @@ if mode == "new":
 
 elif mode == "history":
     get_history_pro_matches()
-
-# COMMAND ----------
-
-df = read_matches_s3()
-min_match_id = df.groupBy().agg(F.min("match_id")).collect()[0][0]
-print(min_match_id)
-
-# COMMAND ----------
-
-get_history_pro_matches()
